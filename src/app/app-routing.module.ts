@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from './contact/contact.component';
-import { FpTestComponent } from './fp-test/fp-test.component';
+import { TestGuard } from './core/test.guard';
 import { HomeComponent } from './home/home.component';
-import { ProductListComponent } from './product-list/product-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: "full" },
   { path: 'contact', component: ContactComponent },
-  { path: 'products', component: ProductListComponent },
-  { path: 'test', component: FpTestComponent }
+  { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)},
+  { path: 'test', loadChildren: () => import('./fp-test/fp-test.module').then(m => m.FpTestModule), canActivate: [TestGuard], canLoad: [TestGuard] }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
