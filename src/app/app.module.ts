@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 import { CoreModule } from './core/core.module';
+import { ContainerComponent } from './container/container.component';
+import { ContainerTextComponent } from './container-text/container-text.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { CoreModule } from './core/core.module';
     NavigationComponent,
     ContactComponent,
     HomeComponent,
-    UnauthorizedComponent
+    UnauthorizedComponent,
+    ContainerComponent,
+    ContainerTextComponent
   ],
   imports: [
     BrowserModule,

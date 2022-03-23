@@ -1,5 +1,11 @@
-<div  fpHighlight="box-highlight" >Welcome!</div>
+<div  #test fpHighlight="box-highlight" >Welcome!</div>
 
 <div *fpPermissions="'admin'; let myTest = test">
   TEST {{myTest}}
 </div>
+
+<fp-container *ngFor="let item of arr"></fp-container>
+<fp-container-text></fp-container-text>
+<input #myInput>
+<button (click)="incr()">Increment</button>
+<button (click)="push()">Push</button>
