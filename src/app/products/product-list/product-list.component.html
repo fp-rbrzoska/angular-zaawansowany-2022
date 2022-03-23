@@ -1,10 +1,11 @@
 <ng-container *ngIf="products$ | async as products; else emptyList">
 
-  <div *ngFor="let product of products">
-    {{product.name}} ({{product.price}})
+  <div *ngFor="let product of products; let i = index;">
+    {{i}} {{product.name}} ({{product.price}})
   </div>
 
 </ng-container>
 <ng-template #emptyList>
 <h3>Empty Products list</h3>
 </ng-template>
+

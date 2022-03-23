@@ -16,7 +16,7 @@
             <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/test" routerLinkActive="active">Test</a>
+            <a class="nav-link" routerLink="/test" routerLinkActive="active" *fpPermissions="'admin'">Test</a>
           </li>
         </ul>
         <button class="btn-primary" *ngIf="!(isLoggedIn$ | async)" (click)="logIn()">LogIn</button>
