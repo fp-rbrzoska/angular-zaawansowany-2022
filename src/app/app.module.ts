@@ -8,13 +8,15 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from './shared/shared.module';
+import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     ContactComponent,
-    HomeComponent
+    HomeComponent,
+    UnauthorizedComponent
   ],
   imports: [
     BrowserModule,

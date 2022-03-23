@@ -23,6 +23,6 @@ export class AuthService {
 
   logOut() {
     this._authSubj.next(false);
-    this._router.navigateByUrl('/contact')
+    this._router.navigateByUrl('/')
   }
 }
