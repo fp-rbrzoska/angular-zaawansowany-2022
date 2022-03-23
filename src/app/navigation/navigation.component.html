@@ -19,5 +19,7 @@
             <a class="nav-link" routerLink="/test" routerLinkActive="active">Test</a>
           </li>
         </ul>
+        <button class="btn-primary" *ngIf="!(isLoggedIn$ | async)" (click)="logIn()">LogIn</button>
+        <button class="btn-danger" *ngIf="isLoggedIn$ | async" (click)="logOut()">LogOut</button>
       </div>
     </nav>
